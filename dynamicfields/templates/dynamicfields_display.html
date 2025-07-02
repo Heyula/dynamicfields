@@ -1,0 +1,5 @@
+<{foreach item=field from=$custom_fields}>
+    <div>
+        <strong><{$field.field_label}>:</strong> <{$item.custom[$field.field_name]|escape}>
+    </div>
+<{/foreach}>

@@ -1,0 +1,16 @@
+<{foreach item=field from=$custom_fields}>
+    <div>
+        <label><{$field.field_label}>:</label>
+        <{if $field.field_type == 'text'}>
+            <input type="text" name="custom_<{$field.field_name}>" value="">
+        <{elseif $field.field_type == 'textarea'}>
+            <textarea name="custom_<{$field.field_name}>"></textarea>
+        <{elseif $field.field_type == 'select'}>
+            <select name="custom_<{$field.field_name}>">
+                <option value="">Seçiniz</option>
+                <!-- Seçenekler dinamik olarak eklenebilir -->
+            </select>
+        <{/if}>
+        <{if $field.field_required}><span style="color:red;">*</span><{/if}>
+    </div>
+<{/foreach}>
